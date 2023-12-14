@@ -1,0 +1,72 @@
+<div class="bg-white flex items-center justify-center max-w-7xl p-10">
+  <h1 class="text-3xl font-bold absolute top-0 left-0  px-8 mr-8">Template-Driven-Forms PlayGround</h1>
+  <form [ngFormOptions]="{ updateOn: 'blur'}" class="max-w-2xl mx-auto bg-gray-100 p-10 rounded-md justify-center w-[500px] ">
+    <!-- <p>Form Model State</p>
+    <pre>{{ userInfo | json }}</pre> -->
+    <div class="flex flex-col py-2">
+      <label for="name">First Name</label>
+      <!-- if directive and the selector are the same we can use directive alone without the selector like our case below -->
+        <!-- updateOn blur is commonly used because it is performance excellennt & cost effective -->
+      <input ngModel [(ngModel)]="userInfo.firstName" [ngModelOptions]="{ name:'first-name', updateOn: 'change'}" type="text" id="name" placeholder="Enter your name" class="contactInput ">
+    </div>
+    <div class="flex flex-col py-2">
+      <label for="name">Last Name</label>
+      <input ngModel [(ngModel)]="userInfo.lastName" name="last" type="text" id="name" placeholder="Enter your last name" class="contactInput ">
+    </div>
+    <div class="flex flex-col py-2">
+      <label for="name">Nick Name</label>
+      <input ngModel [(ngModel)]="userInfo.nickname" name="nick-name" type="text" id="name" placeholder="Come up with a nickname" class="contactInput ">
+    </div>
+    <div class="flex flex-col py-2">
+      <label for="email">Email</label>
+      <input ngModel [(ngModel)]="userInfo.email" name="email" type="email" id="email" placeholder="Provide your email" class="contactInput ">
+    </div>
+
+    <div class="flex space-x-4">
+      <div class="space-y-2">
+        <label for="year-of-birth">Year Of Birth</label>
+        <select id="year-of-birth" ngModel [(ngModel)]="userInfo.yearOfBirth" name="year-of-birth" class="date">
+           <option *ngFor="let year of years" [value]="year">{{year}}</option>
+        </select>
+      </div>
+
+      <div class="space-y-2">
+        <label for="passport">Passport Number</label>
+        <input [(ngModel)]="userInfo.passport" name="passport" type="text" id="passport" placeholder="Fill passport" class="contactInput">
+      </div>
+    </div>
+
+    <fieldset class="border-2 border-y-gray-200 rounded-lg p-4 space-y-2 mt-2">
+      <legend>Address</legend>
+      <!-- <div class="space-x-5">
+        <label for="full-address">Full Address</label>
+          <Input [(ngModel)]="userInfo.fullAddress" name="full-address" type="text" id="full-address"  placeholder="Fill full-address" class="contactInput ">
+      </div>
+      <div class="space-x-10">
+        <label for="city" class="mr-10">City</label>
+          <Input [(ngModel)]="userInfo.city" name="city" type="text" id="city"  placeholder="Fill your city" class="contactInput ">
+      </div>
+      <div class="space-x-5">
+        <label for="post-code" class="mr-5">Post Code</label>
+          <Input [(ngModel)]="userInfo.postCode" name="post-code" type="number" id="post-code"  placeholder="Fill your post-code" class="contactInput ">
+      </div> -->
+
+      <div class="space-x-5">
+        <label for="full-address">Full Address</label>
+        <input [(ngModel)]="userInfo.fullAddress" name="full-address" type="text" id="full-address" placeholder="full-address" class="contactInput">
+      </div>
+
+      <div class="space-x-10">
+        <label for="city">City</label>
+        <input [(ngModel)]="userInfo.city" name="city" type="text" id="city" placeholder="city" class="contactInput">
+      </div>
+
+      <div class="space-x-5">
+        <label for="post-code">Post Code</label>
+        <input [(ngModel)]="userInfo.postCode" name="post-code" type="number" id="post-code" placeholder="post-code" class="contactInput">
+      </div>
+
+    </fieldset>
+    <button type="submit" class='bg-[#F7AB0A] py-2 px-10 rounded-md text-black font-bold text-lg mt-4'>Save</button>
+  </form>
+</div>
