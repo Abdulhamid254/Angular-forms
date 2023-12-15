@@ -1,7 +1,7 @@
 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { UserInfo } from '../../../core/user-info';
 
 
@@ -14,6 +14,7 @@ import { UserInfo } from '../../../core/user-info';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TemplateFormsPageComponent implements OnInit{
+
 
   userInfo: UserInfo = {
     firstName: 'Abdul',
@@ -37,5 +38,11 @@ export class TemplateFormsPageComponent implements OnInit{
   ngOnInit(): void {
 
   }
+
+  onSubmitForm(form:NgForm, e: SubmitEvent) {
+    console.log('Form implemented.',form.value);
+    console.log('This is the native Submi  Event',e);
+
+    }
 
 }

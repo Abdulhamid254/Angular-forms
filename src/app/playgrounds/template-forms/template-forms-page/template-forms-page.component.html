@@ -1,6 +1,6 @@
 <div class="bg-white flex flex-col items-center justify-center max-w-2xl rounded-lg md:max-w-7xl">
   <h1 class="text-3xl font-bold px-8 mt-8">Template-Driven-Forms Playground</h1>
-  <form [ngFormOptions]="{ updateOn: 'blur'}" class="flex-1 max-w-2xl mx-auto bg-gray-100 p-5 rounded-md w-[500px]">
+  <form #form="ngForm" (ngSubmit)="onSubmitForm(form, $event)" [ngFormOptions]="{ updateOn: 'blur'}" class="flex-1 max-w-2xl mx-auto bg-gray-100 p-5 rounded-md w-[500px]">
     <!-- <p>Form Model State</p>
     <pre>{{ userInfo | json }}</pre> -->
     <div class="flex flex-col py-2">
