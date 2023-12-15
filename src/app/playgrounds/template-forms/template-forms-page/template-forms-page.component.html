@@ -1,21 +1,21 @@
-<div class="bg-white flex items-center justify-center max-w-7xl p-10">
-  <h1 class="text-3xl font-bold absolute top-0 left-0  px-8 mr-8">Template-Driven-Forms PlayGround</h1>
-  <form [ngFormOptions]="{ updateOn: 'blur'}" class="max-w-2xl mx-auto bg-gray-100 p-10 rounded-md justify-center w-[500px] ">
+<div class="bg-white flex flex-col items-center justify-center max-w-4xl">
+  <h1 class="text-3xl font-bold px-8 mt-8">Template-Driven-Forms Playground</h1>
+  <form [ngFormOptions]="{ updateOn: 'blur'}" class="flex-1 max-w-2xl mx-auto bg-gray-100 p-5 rounded-md w-[500px]">
     <!-- <p>Form Model State</p>
     <pre>{{ userInfo | json }}</pre> -->
     <div class="flex flex-col py-2">
       <label for="name">First Name</label>
       <!-- if directive and the selector are the same we can use directive alone without the selector like our case below -->
         <!-- updateOn blur is commonly used because it is performance excellennt & cost effective -->
-      <input ngModel [(ngModel)]="userInfo.firstName" [ngModelOptions]="{ name:'first-name', updateOn: 'change'}" type="text" id="name" placeholder="Enter your name" class="contactInput ">
+      <input ngModel [(ngModel)]="userInfo.firstName" [ngModelOptions]="{ name: 'first-name', updateOn: 'change', standalone: true }" type="text" id="name" placeholder="Enter your name" class="contactInput ">
     </div>
     <div class="flex flex-col py-2">
-      <label for="name">Last Name</label>
-      <input ngModel [(ngModel)]="userInfo.lastName" name="last" type="text" id="name" placeholder="Enter your last name" class="contactInput ">
+      <label for="last-name">Last Name</label>
+      <input ngModel [(ngModel)]="userInfo.lastName" name="last-name" type="text" id="last-name" placeholder="Enter your last name" class="contactInput ">
     </div>
     <div class="flex flex-col py-2">
-      <label for="name">Nick Name</label>
-      <input ngModel [(ngModel)]="userInfo.nickname" name="nick-name" type="text" id="name" placeholder="Come up with a nickname" class="contactInput ">
+      <label for="nick-name">Nick Name</label>
+      <input ngModel [(ngModel)]="userInfo.nickname" name="nick-name" type="text" id="nick-name" placeholder="Come up with a nickname" class="contactInput ">
     </div>
     <div class="flex flex-col py-2">
       <label for="email">Email</label>
